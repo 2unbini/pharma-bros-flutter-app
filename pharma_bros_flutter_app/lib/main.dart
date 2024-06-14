@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pharma_bros_flutter_app/screens/home/home_screen.dart';
+import 'package:pharma_bros_flutter_app/screens/profile/profile_screen.dart';
 
 void main() {
   runApp(const PharmaBrosFlutterApp());
+}
+
+enum Tab {
+  home,
+  profile;
 }
 
 class PharmaBrosFlutterApp extends StatelessWidget {
@@ -44,8 +51,15 @@ class CustomCupertinoTabBar extends StatelessWidget {
         ),
         tabBuilder: (BuildContext context, int index) {
           return CupertinoTabView(
-            builder: (BuildContext context) {
-              return Center(child: Text('View Index $index'));
+            builder: (context) {
+              switch (index) {
+                case 0:
+                  return HomeScreen();
+                case 1:
+                  return ProfileScreen();
+                default:
+                  return Center();
+              }
             },
           );
         });
