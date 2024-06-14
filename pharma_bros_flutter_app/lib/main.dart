@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_svg/svg.dart';
 
 void main() {
   runApp(const PharmaBrosFlutterApp());
@@ -25,14 +26,17 @@ class CustomCupertinoTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
         tabBar: CupertinoTabBar(
-          items: const <BottomNavigationBarItem>[
+          items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.house),
-                activeIcon: Icon(CupertinoIcons.house_fill),
+                icon:
+                    SvgPicture.asset('assets/icons/svg_Icon-home-default.svg'),
+                activeIcon:
+                    SvgPicture.asset('assets/icons/svg_Icon-home-selected.svg'),
                 label: '홈'),
             BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.person),
-                activeIcon: Icon(CupertinoIcons.person_fill),
+                icon: SvgPicture.asset('assets/icons/svg_Icon-my-default.svg'),
+                activeIcon:
+                    SvgPicture.asset('assets/icons/svg_Icon-my-selected.svg'),
                 label: '내 정보'),
           ],
           activeColor: Colors.black,
