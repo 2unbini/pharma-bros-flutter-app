@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pharma_bros_flutter_app/screens/general/root_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const PharmaBrosFlutterApp());
 }
 

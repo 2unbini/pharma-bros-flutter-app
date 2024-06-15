@@ -3,6 +3,7 @@ import 'package:pharma_bros_flutter_app/constants/colors.dart';
 import 'package:pharma_bros_flutter_app/constants/text_styles.dart';
 import 'package:pharma_bros_flutter_app/widgets/profile/alert_setting_area.dart';
 import 'package:pharma_bros_flutter_app/widgets/profile/counsel_record_area.dart';
+import 'package:pharma_bros_flutter_app/widgets/profile/footer_area.dart';
 import 'package:pharma_bros_flutter_app/widgets/profile/my_info_area.dart';
 import 'package:pharma_bros_flutter_app/widgets/profile/participate_area.dart';
 import 'package:pharma_bros_flutter_app/widgets/profile/preference_area.dart';
@@ -35,6 +36,7 @@ class ProfileScreen extends StatelessWidget {
           ParticipateArea(),
           columnDivider,
           PreferenceArea(),
+          FooterArea(),
         ],
       ),
     );
