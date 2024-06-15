@@ -7,29 +7,33 @@ class MyInfoArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 24, horizontal: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'nickname',
-                style: customTitleBoldTextStyle,
-              ),
-              Text(
-                'kwoneunbini@gmail.com',
-                style: customSubTitleTextStyle,
-              ),
-            ],
-          ),
-          Icon(
-            Icons.chevron_right,
-            color: GREY,
-          )
-        ],
+    return GestureDetector(
+      onTap: () {},
+      behavior: HitTestBehavior.opaque,
+      child: const Padding(
+        padding: EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'nickname',
+                  style: customTitleBoldTextStyle,
+                ),
+                Text(
+                  'kwoneunbini@gmail.com',
+                  style: customSubTitleTextStyle,
+                ),
+              ],
+            ),
+            Icon(
+              Icons.chevron_right,
+              color: GREY,
+            )
+          ],
+        ),
       ),
     );
   }
