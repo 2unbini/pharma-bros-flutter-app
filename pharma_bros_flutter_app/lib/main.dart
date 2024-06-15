@@ -1,16 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:pharma_bros_flutter_app/screens/home/home_screen.dart';
-import 'package:pharma_bros_flutter_app/screens/profile/profile_screen.dart';
+import 'package:pharma_bros_flutter_app/screens/general/root_screen.dart';
 
 void main() {
   runApp(const PharmaBrosFlutterApp());
-}
-
-enum Tab {
-  home,
-  profile;
 }
 
 class PharmaBrosFlutterApp extends StatelessWidget {
@@ -19,49 +11,8 @@ class PharmaBrosFlutterApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(
-      theme: CupertinoThemeData(brightness: Brightness.light),
-      home: CustomCupertinoTabBar(),
+    return const MaterialApp(
+      home: RootScreen(),
     );
-  }
-}
-
-class CustomCupertinoTabBar extends StatelessWidget {
-  const CustomCupertinoTabBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoTabScaffold(
-        tabBar: CupertinoTabBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon:
-                    SvgPicture.asset('assets/icons/svg_Icon-home-default.svg'),
-                activeIcon:
-                    SvgPicture.asset('assets/icons/svg_Icon-home-selected.svg'),
-                label: '홈'),
-            BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/icons/svg_Icon-my-default.svg'),
-                activeIcon:
-                    SvgPicture.asset('assets/icons/svg_Icon-my-selected.svg'),
-                label: '내 정보'),
-          ],
-          activeColor: Colors.black,
-          height: 60,
-        ),
-        tabBuilder: (BuildContext context, int index) {
-          return CupertinoTabView(
-            builder: (context) {
-              switch (index) {
-                case 0:
-                  return HomeScreen();
-                case 1:
-                  return ProfileScreen();
-                default:
-                  return Center();
-              }
-            },
-          );
-        });
   }
 }
